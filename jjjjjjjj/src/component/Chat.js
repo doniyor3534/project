@@ -1,7 +1,9 @@
 import React from 'react'
 
-export default function Chat() {
+export const Chat=()=> {
   return (
-    <div>Chat</div>
+    <div className="chat">
+        chat
+    </div>
   )
 }

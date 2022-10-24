@@ -1,14 +1,26 @@
 import "./App.css";
 import Navbar from "./component/Navbar";
-import { BrowserRouter } from "react-router-dom";
-import AppRouter from "./component/AppRouter";
+import { Routes, Route } from "react-router-dom";
+import { Chat } from "./component/Chat";
+import { Login } from "./component/Login";
 
 function App() {
+  const user = false;
   return (
-    <BrowserRouter>
+    <div className="App">
       <Navbar />
-      <AppRouter />
-    </BrowserRouter>
+      {user ? (
+        <Routes>
+          <Route path="/" element={<Chat />} />
+          <Route path="/chat" element={<Chat />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      )}
+    </div>
   );
 }
 
